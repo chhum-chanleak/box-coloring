@@ -1,0 +1,102 @@
+Patterns:
+  Factory:
+    When to Use: When you need to create objects, but the exact class of the object may not be known until runtime.
+    Why Beginner-Friendly: It helps understand object creation, and it's easy to implement. It separates the object creation logic from the code that uses the objects.
+  Singleton:
+    When to Use: When you want to ensure only one instance of a class is created, like a configuration manager or database connection.
+    Why Beginner-Friendly: It introduces the concept of controlling object instances, making it easy to manage shared resources in an application.
+  Observer:
+    When to Use: When you need objects (observers) to automatically update based on changes in another object (subject). Think event listeners or notification systems.
+    Why Beginner-Friendly: It helps beginners learn how to manage state changes and event-driven programming.
+  Strategy:
+    When to Use: When you want to add new functionality to an existing object without altering its structure, such as adding logging or validation.
+    Why Beginner-Friendly: It’s a simple concept that shows how to extend functionality dynamically, promoting code reuse.
+  Decorator:
+    When to Use: When you need to switch between different algorithms or behaviors dynamically, such as different sorting strategies or payment methods.
+    Why Beginner-Friendly: It introduces the concept of separating algorithms, making your code more flexible and modular.
+
+# More on Functions
+
+# Function Type Expressions
+# Call Signatures
+# Construct Signatures
+# Generic Functions
+  # Inference
+  # Constraints
+  # Working with Constrained Values
+  # Specifying Type Arguments
+  # Guidelines for Writing Good Generic Functions
+# Optional Parameters
+  # Optional Parameters in Callbacks
+# Function Overloads
+  # Overload Signatures and the Implementation Signature
+  # Writing Good Overloads
+# Declaring 'this' in a Function
+# Other Types to Know About
+  # void
+  # object
+  # unknown
+  # never
+  # Function
+# Rest Parameters and Arguments
+  # Rest Parameters
+  # Rest Arguments
+# Parameter Destructuring
+# Assignability of Functions
+  # Return type void
+# More on Functions
+
+# Function Type Expressions
+# Call Signatures
+# Construct Signatures
+# Generic Functions
+  # Inference
+  # Constraints
+  # Working with Constrained Values
+  # Specifying Type Arguments
+  # Guidelines for Writing Good Generic Functions
+# Optional Parameters
+  # Optional Parameters in Callbacks
+# Function Overloads
+  # Overload Signatures and the Implementation Signature
+  # Writing Good Overloads
+# Declaring 'this' in a Function
+# Other Types to Know About
+  # void
+  # object
+  # unknown
+  # never
+  # Function
+# Rest Parameters and Arguments
+  # Rest Parameters
+  # Rest Arguments
+# Parameter Destructuring
+# Assignability of Functions
+  # Return type void
+
+-> Planning Before Implementation.
+Example Case: Planning a To-Do List App
+Step 1: List requirements: add tasks, delete tasks, mark as complete.
+Step 2: Break into smaller modules: task management, UI display, database storage.
+Step 3: Sketch architecture: simple front-end (React), back-end API (Node.js), and MongoDB.
+Step 4: Create flowchart: user clicks "add task," task is added to the database, task appears in UI.
+Step 5: Technologies: TypeScript, React, Node.js, MongoDB.
+Step 6: Simple array for task management (or list structure).
+Step 7: Write pseudo-code for task management (add, delete, complete).
+Step 8: Design a UI wireframe for adding tasks and displaying them.
+Step 9: Milestones: Week 1 - Setup environment, Week 2 - Core task features, etc.
+Step 10: Plan unit tests for task management.
+Step 11: Use Git for version control and create a README.
+<-
+
+->
+Box Coloring:
+  1. Create a webpage with 16 x 16 grid of square divs.
+    container-box(Singleton) contains sub-boxes
+  2. Set up a “hover” effect so that the grid divs change color when your mouse passes over them, leaving a (pixelated) trail through your grid like a pen would.
+  3. Add a button on the top of the screen that will send the user a popup asking for the number of squares per side for the new grid. Once entered, the existing grid should be removed, and a new grid should be generated in the same total space as before (e.g., 960px wide) so that you’ve got a new sketch pad.
+  4. Rather than squares being the same color throughout the grid, randomize the squares’ RGB values with each interaction.
+  5. Additionally, implement a progressive darkening effect where each interaction darkens the square by 10%. The goal is to achieve a fully black (or completely colored) square in only ten interactions.
+<-
+
+Pseudo Code:
