@@ -57,3 +57,5 @@ class Container {
     return box;
   }
 }
+
+const container = Container.getInstance();

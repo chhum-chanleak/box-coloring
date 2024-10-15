@@ -39,3 +39,4 @@ class Container {
         console.log("Hello, world!");
     }
 }
+const container = Container.getInstance();
