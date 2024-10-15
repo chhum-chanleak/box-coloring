@@ -111,6 +111,19 @@ class Container {
       throw new Error("The available choice is either 16 or 32.");
     }
   }
+
+  // Fill 'container' with boxes.
+  public fillContainer(choice: number): void {
+    if (choice === 16) {
+      for (let i = 0; i < 900; i += 1) {
+        container.node.appendChild(this.createBox(choice));
+      }
+    } else if (choice === 32) {
+      for (let i = 0; i < 323; i += 1) {
+        container.node.appendChild(this.createBox(choice));
+      }
+    }
+  }
 }
 
 const container = Container.getInstance();
