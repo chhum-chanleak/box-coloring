@@ -12,7 +12,7 @@ class Container {
 
     this._className = "";
     this._numberOfBoxes = 0;
-    this._currentColor = "";
+    this._currentColor = "#00f";
   }
 
   // Static method to provide access to the instance.

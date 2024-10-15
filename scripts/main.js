@@ -14,7 +14,7 @@ class Container {
         console.log("Instance has been created");
         this._className = "";
         this._numberOfBoxes = 0;
-        this._currentColor = "";
+        this._currentColor = "#00f";
     }
     // Static method to provide access to the instance.
     static getInstance() {
