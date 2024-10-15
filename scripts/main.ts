@@ -66,6 +66,13 @@ class Container {
 
     return box;
   }
+
+  // Handle event which changes background color of 'box' when hovering.
+  public handleBox(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+
+    target.style.backgroundColor = `${container.currentColor}`;
+  }
 }
 
 const container = Container.getInstance();
