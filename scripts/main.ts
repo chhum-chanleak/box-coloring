@@ -4,6 +4,7 @@ class Container {
   // Public fields
   public _className: string;
   public _numberOfBoxes: number;
+  public _currentColor: string;
 
   // Private constructor prevents direct instantiation from outside the class.
   private constructor() {
@@ -11,6 +12,7 @@ class Container {
 
     this._className = "";
     this._numberOfBoxes = 0;
+    this._currentColor = "";
   }
 
   // Static method to provide access to the instance.
@@ -38,6 +40,14 @@ class Container {
 
   public increaseNumberOfBoxes(): void {
     this._numberOfBoxes += 1;
+  }
+
+  get currentColor(): string {
+    return this._currentColor;
+  }
+
+  set currentColor(color: string) {
+    this._currentColor = color;
   }
 
   public showDetail(): void {
