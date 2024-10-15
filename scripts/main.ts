@@ -73,6 +73,17 @@ class Container {
 
     target.style.backgroundColor = `${container.currentColor}`;
   }
+
+  // Apply 'mouseenter' event to all boxes.
+  public applyEventToAllBoxes(): void {
+    const boxes = document.querySelectorAll(".box");
+
+    for (let i = 0; i < boxes.length; i += 1) {
+      const box = boxes[i] as HTMLElement;
+
+      box.addEventListener("mouseenter", this.handleBox);
+    }
+  }
 }
 
 const container = Container.getInstance();
