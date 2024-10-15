@@ -3,12 +3,14 @@ class Container {
   private static instance: Container;
   // Public fields
   public _className: string;
+  public _numberOfBox: number;
 
   // Private constructor prevents direct instantiation from outside the class.
   private constructor() {
     console.log("Instance has been created");
 
     this._className = "";
+    this._numberOfBox = 0;
   }
 
   // Static method to provide access to the instance.
