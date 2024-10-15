@@ -15,6 +15,7 @@ class Container {
         this._className = "";
         this._numberOfBoxes = 0;
         this._currentColor = "#00f";
+        this._node = document.querySelector('div.container');
     }
     // Static method to provide access to the instance.
     static getInstance() {
@@ -51,7 +52,7 @@ class Container {
         target.style.backgroundColor = `${container.currentColor}`;
     }
     // Apply 'mouseenter' event to all boxes.
-    applyEventToAllBoxes(color) {
+    applyEventToAllBoxes() {
         const boxes = document.querySelectorAll(".box");
         for (let i = 0; i < boxes.length; i += 1) {
             const box = boxes[i];

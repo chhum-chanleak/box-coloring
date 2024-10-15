@@ -5,6 +5,7 @@ class Container {
   public _className: string;
   public _numberOfBoxes: number;
   public _currentColor: string;
+  public _node: HTMLElement;
 
   // Private constructor prevents direct instantiation from outside the class.
   private constructor() {
@@ -13,6 +14,7 @@ class Container {
     this._className = "";
     this._numberOfBoxes = 0;
     this._currentColor = "#00f";
+    this._node = document.querySelector('div.container') as HTMLElement;
   }
 
   // Static method to provide access to the instance.
@@ -48,6 +50,10 @@ class Container {
 
   set currentColor(color: string) {
     this._currentColor = color;
+  }
+
+  get node(): HTMLElement {
+    return this._node;
   }
 
   public showDetail(): void {
