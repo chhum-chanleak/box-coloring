@@ -67,5 +67,37 @@ class Container {
             box.addEventListener("mouseenter", this.handleBox);
         }
     }
+    // Show 'container' to the webpage
+    showContainer(choice) {
+        const container = document.querySelector('div.container');
+        if (choice === 16) {
+            container.style.cssText = `
+        width: 600px;
+        height: 600px;
+      `;
+        }
+        else if (choice === 32) {
+            container.style.cssText = `
+        width: 700px;
+        height: 700px;
+    `;
+        }
+        else {
+            throw new Error("The available choice is either 16 or 32.");
+        }
+    }
+    // Fill 'container' with boxes.
+    fillContainer(choice) {
+        if (choice === 16) {
+            for (let i = 0; i < 900; i += 1) {
+                container.node.appendChild(this.createBox(choice));
+            }
+        }
+        else if (choice === 32) {
+            for (let i = 0; i < 323; i += 1) {
+                container.node.appendChild(this.createBox(choice));
+            }
+        }
+    }
 }
 const container = Container.getInstance();

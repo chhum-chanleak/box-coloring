@@ -92,6 +92,25 @@ class Container {
       box.addEventListener("mouseenter", this.handleBox);
     }
   }
+
+  // Show 'container' to the webpage
+  public showContainer(choice: number): void {
+    const container = document.querySelector('div.container') as HTMLElement;
+
+    if (choice === 16) {
+      container.style.cssText = `
+        width: 600px;
+        height: 600px;
+      `;
+    } else if (choice === 32) {
+      container.style.cssText = `
+        width: 700px;
+        height: 700px;
+    `;
+    } else {
+      throw new Error("The available choice is either 16 or 32.");
+    }
+  }
 }
 
 const container = Container.getInstance();
