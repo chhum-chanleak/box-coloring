@@ -36,6 +36,10 @@ class Container {
     return this._numberOfBoxes;
   }
 
+  public increaseNumberOfBoxes(): void {
+    this._numberOfBoxes += 1;
+  }
+
   public showDetail(): void {
     console.log("Hello, world!");
   }

@@ -4,7 +4,7 @@ class Container {
     constructor() {
         console.log("Instance has been created");
         this._className = "";
-        this._numberOfBox = 0;
+        this._numberOfBoxes = 0;
     }
     // Static method to provide access to the instance.
     static getInstance() {
@@ -19,6 +19,12 @@ class Container {
     }
     set className(value) {
         this._className = value;
+    }
+    get numberOfBoxes() {
+        return this._numberOfBoxes;
+    }
+    increaseNumberOfBoxes() {
+        this._numberOfBoxes += 1;
     }
     showDetail() {
         console.log("Hello, world!");
