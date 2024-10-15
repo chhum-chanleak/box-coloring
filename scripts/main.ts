@@ -43,4 +43,17 @@ class Container {
   public showDetail(): void {
     console.log("Hello, world!");
   }
+
+  // A box for container
+  public createBox = ():  Element => {
+    const box = document.createElement("div");
+
+    // increase '_numberOfBoxes' by 1.
+    this.increaseNumberOfBoxes();
+
+    box.setAttribute("class", `box ${this._numberOfBoxes}`);
+    box.style.cssText = `width: 20px; height: 20px; border: 1px solid #000;`;    
+
+    return box;
+  }
 }
