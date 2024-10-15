@@ -56,10 +56,6 @@ class Container {
     return this._node;
   }
 
-  public showDetail(): void {
-    console.log("Hello, world!");
-  }
-
   // A box for container
   public createBox = (choice: number):  Element => {
     const box = document.createElement("div");

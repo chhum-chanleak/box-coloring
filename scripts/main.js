@@ -54,9 +54,6 @@ class Container {
     get node() {
         return this._node;
     }
-    showDetail() {
-        console.log("Hello, world!");
-    }
     // Handle event which changes background color of 'box' when hovering.
     handleBox(event) {
         const target = event.target;
