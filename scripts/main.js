@@ -75,7 +75,7 @@ class Container {
         // If there is no 'div.container' inside <main>, then create one.
         this.addNewContainer();
         const container = document.querySelector('div.container');
-        if (choice === 16) {
+        if (choice === 30) {
             container.style.cssText = `
         width: 600px;
         height: 600px;
@@ -83,7 +83,7 @@ class Container {
             // Fill 'container' with small boxes.
             this.fillContainer(choice);
         }
-        else if (choice === 32) {
+        else if (choice === 19) {
             container.style.cssText = `
         width: 700px;
         height: 700px;

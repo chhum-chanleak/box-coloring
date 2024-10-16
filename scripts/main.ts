@@ -61,7 +61,7 @@ class Container {
   }
 
   // A box for container
-  public createBox = (choice: number = 30):  Element => {
+  public createBox = (choice: number = 30 ): Element => {
     const box = document.createElement("div");
 
     // increase '_numberOfBoxes' by 1.
@@ -98,21 +98,21 @@ class Container {
   }
 
   // Show 'container' to the webpage
-  public showContainer(choice: number): void {
+  public showContainer(choice: number = 30): void {
 
     // If there is no 'div.container' inside <main>, then create one.
     this.addNewContainer();
 
     const container = document.querySelector('div.container') as HTMLElement;
 
-    if (choice === 16) {
+    if (choice === 30) {
       container.style.cssText = `
         width: 600px;
         height: 600px;
       `;
       // Fill 'container' with small boxes.
       this.fillContainer(choice);
-    } else if (choice === 32) {
+    } else if (choice === 19) {
       container.style.cssText = `
         width: 700px;
         height: 700px;
