@@ -177,6 +177,40 @@ class Container {
       throw new Error("'.box' does not exist.");
     }
   }
+
+  
+  // Get 'excludesBoxes' from 'boxes' inside 'div.container' which will be used later to style 'boxes' inside 'div.container'.
+  public getExcludedBoxes(direction: string): Element[] {
+    const boxes = document.querySelectorAll('.box');
+    let excludesBoxes = [] as Element[];
+
+    // Check if the model of 'boxes' inside the 'div.container' are '30x30' or '19x19'.
+    if (this.getBoxesModel() === "30x30") {
+      if (direction === 'row') {
+        for (let i = 0; i < 30; i += 1) {
+          excludesBoxes.push(boxes[i]);
+        }
+      } else if (direction === 'column') {
+        for (let i = 0; i < 871; i += 30) {
+          excludesBoxes.push(boxes[i]);
+        }
+      }
+    } else if (this.getBoxesModel() === "19x19") {
+      if (direction === 'row') {
+        for (let i = 0; i < 17; i += 1) {
+          excludesBoxes.push(boxes[i]);
+        }
+      } else if (direction === 'column') {
+        for (let i = 0; i < 307; i += 17) {
+          excludesBoxes.push(boxes[i]);
+        }
+      }
+    } else {
+      throw new Error("The available choice is either 'row' or 'column'.");
+    }
+
+    return excludesBoxes;
+  }
 }
 
 const container = Container.getInstance();
