@@ -99,7 +99,8 @@ class Container {
 
   // Show 'container' to the webpage
   public showContainer(choice: number = 30): void {
-
+    // If there are already '.box's inside 'div.container', then delete the old one.
+    this.removeContainerAndBoxes();
     // If there is no 'div.container' inside <main>, then create one.
     this.addNewContainer();
 

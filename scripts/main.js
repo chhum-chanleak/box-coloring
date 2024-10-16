@@ -72,6 +72,8 @@ class Container {
     }
     // Show 'container' to the webpage
     showContainer(choice = 30) {
+        // If there are already '.box's inside 'div.container', then delete the old one.
+        this.removeContainerAndBoxes();
         // If there is no 'div.container' inside <main>, then create one.
         this.addNewContainer();
         const container = document.querySelector('div.container');
