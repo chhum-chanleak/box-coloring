@@ -113,13 +113,19 @@ class Container {
       `;
       // Fill 'container' with small boxes.
       this.fillContainer(choice);
+      // Remove top and left borders of any '.box' which is not a part of 'firstRowBoxes' and 'firstColumnBoxes'.
+      this.removeTopBorder();
+      this.removeLeftBorder();
     } else if (choice === 17) {
       container.style.cssText = `
         width: 700px;
         height: 700px;
     `;
-    // Fill 'container' with big boxes.
-    this.fillContainer(choice);
+      // Fill 'container' with big boxes.
+      this.fillContainer(choice);
+      // Remove top and left borders of any '.box' which is not a part of 'firstRowBoxes' and 'firstColumnBoxes'.
+      this.removeTopBorder();
+      this.removeLeftBorder();
     } else {
       throw new Error("The available choice is either 30 or 17.");
     }
