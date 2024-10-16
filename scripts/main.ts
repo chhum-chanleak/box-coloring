@@ -61,7 +61,7 @@ class Container {
   }
 
   // A box for container
-  public createBox = (choice: number = 30 ): Element => {
+  public createBox = (choice: number = 30): Element => {
     const box = document.createElement("div");
 
     // increase '_numberOfBoxes' by 1.
@@ -128,11 +128,11 @@ class Container {
   public fillContainer(choice: number): void {
     const container = document.querySelector("div.container") as HTMLElement;
 
-    if (choice === 16) {
+    if (choice === 30) {
       for (let i = 0; i < 900; i += 1) {
         container.appendChild(this.createBox(choice));
       }
-    } else if (choice === 32) {
+    } else if (choice === 19) {
       for (let i = 0; i < 323; i += 1) {
         container.appendChild(this.createBox(choice));
       }

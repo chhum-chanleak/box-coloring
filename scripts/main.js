@@ -71,7 +71,7 @@ class Container {
         }
     }
     // Show 'container' to the webpage
-    showContainer(choice) {
+    showContainer(choice = 30) {
         // If there is no 'div.container' inside <main>, then create one.
         this.addNewContainer();
         const container = document.querySelector('div.container');
@@ -98,12 +98,12 @@ class Container {
     // Fill 'container' with boxes.
     fillContainer(choice) {
         const container = document.querySelector("div.container");
-        if (choice === 16) {
+        if (choice === 30) {
             for (let i = 0; i < 900; i += 1) {
                 container.appendChild(this.createBox(choice));
             }
         }
-        else if (choice === 32) {
+        else if (choice === 19) {
             for (let i = 0; i < 323; i += 1) {
                 container.appendChild(this.createBox(choice));
             }
