@@ -166,6 +166,17 @@ class Container {
       main.appendChild(newContainer);
     }
   }
+
+  // Check whether 'boxes' are '30x30' or '19x19'.
+  public getBoxesModel(): string {
+    const box = document.querySelector('.box') as HTMLElement;
+
+    if (box) {
+      return box.style.width === "20px" ? "30x30" : "19x19";
+    } else {
+      throw new Error("'.box' does not exist.");
+    }
+  }
 }
 
 const container = Container.getInstance();
