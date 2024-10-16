@@ -95,14 +95,15 @@ class Container {
     }
     // Fill 'container' with boxes.
     fillContainer(choice) {
+        const container = document.querySelector("div.container");
         if (choice === 16) {
             for (let i = 0; i < 900; i += 1) {
-                container.node.appendChild(this.createBox(choice));
+                container.appendChild(this.createBox(choice));
             }
         }
         else if (choice === 32) {
             for (let i = 0; i < 323; i += 1) {
-                container.node.appendChild(this.createBox(choice));
+                container.appendChild(this.createBox(choice));
             }
         }
     }
