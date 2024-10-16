@@ -103,7 +103,7 @@ class Container {
                 container.appendChild(this.createBox(choice));
             }
         }
-        else if (choice === 19) {
+        else if (choice === 17) {
             for (let i = 0; i < 323; i += 1) {
                 container.appendChild(this.createBox(choice));
             }
