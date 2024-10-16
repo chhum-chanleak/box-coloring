@@ -40,6 +40,10 @@ class Container {
     return this._numberOfBoxes;
   }
 
+  set numberOfBoxes(amount) {
+    this._numberOfBoxes = amount;
+  }
+
   public increaseNumberOfBoxes(): void {
     this._numberOfBoxes += 1;
   }

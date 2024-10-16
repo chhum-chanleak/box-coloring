@@ -42,6 +42,9 @@ class Container {
     get numberOfBoxes() {
         return this._numberOfBoxes;
     }
+    set numberOfBoxes(amount) {
+        this._numberOfBoxes = amount;
+    }
     increaseNumberOfBoxes() {
         this._numberOfBoxes += 1;
     }
