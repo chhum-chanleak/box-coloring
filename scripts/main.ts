@@ -70,10 +70,10 @@ class Container {
 
     if (choice === 30) {      
       box.style.cssText = `width: 20px; height: 20px; border: 1px solid #000;`;
-    } else if (choice === 19) {
+    } else if (choice === 17) {
       box.style.cssText = `width: 40px; height: 40px; border: 1px solid #000;`;
     } else {
-      throw new Error("The available choice is either 16 or 32.");
+      throw new Error("The available choice is either 30 or 17.");
     }
 
     return box;
