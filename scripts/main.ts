@@ -133,6 +133,19 @@ class Container {
   public removeContainer(): void {
     this._node.remove();
   }
+
+  // Add a 'div.container' to <main> when there isn't any 'div.container'.
+  public addNewContainer(): void {
+    const main = document.querySelector("main") as HTMLElement;
+    const currentContainer = document.querySelector("div.container") as HTMLElement;
+    const newContainer = document.createElement("div") as HTMLElement;
+
+    newContainer.setAttribute("class", "container");
+
+    if (!currentContainer) {
+      main.appendChild(newContainer);
+    }
+  }
 }
 
 const container = Container.getInstance();
