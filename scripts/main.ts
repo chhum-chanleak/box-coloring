@@ -135,9 +135,19 @@ class Container {
     }
   }
 
-  // Remove 'container' from the webpage.
-  public removeContainer(): void {
+  // Remove 'div.container' the boxes inside of it from the DOM and set '_numberOfBoxes' to 0.
+  public removeContainerAndBoxes(): void {
+    const boxes = document.querySelectorAll(".box");
+
+    // Remove 'div.container'.
     this._node.remove();
+    // Remove 'boxes' inside of 'div.container'.
+    for (let i = 0; i < boxes.length; i += 1) {
+      boxes[i].remove();
+    }
+
+    // Set '_numberOfBoxes' to 0.
+    this.numberOfBoxes = 0;
   }
 
   // Add a 'div.container' to <main> when there isn't any 'div.container'.
