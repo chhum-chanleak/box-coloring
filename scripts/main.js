@@ -19,7 +19,7 @@ class Container {
             }
             return box;
         };
-        console.log("Instance has been created");
+        console.log("container has been created");
         this._className = "";
         this._numberOfBoxes = 0;
         this._currentColor = "#00f";
@@ -102,6 +102,10 @@ class Container {
                 container.node.appendChild(this.createBox(choice));
             }
         }
+    }
+    // Remove 'container' from the webpage.
+    removeContainer() {
+        this._node.remove();
     }
 }
 const container = Container.getInstance();

@@ -128,6 +128,11 @@ class Container {
       }
     }
   }
+
+  // Remove 'container' from the webpage.
+  public removeContainer(): void {
+    this._node.remove();
+  }
 }
 
 const container = Container.getInstance();
