@@ -99,6 +99,10 @@ class Container {
 
   // Show 'container' to the webpage
   public showContainer(choice: number): void {
+
+    // If there is no 'div.container' inside <main>, then create one.
+    this.addNewContainer();
+
     const container = document.querySelector('div.container') as HTMLElement;
 
     if (choice === 16) {

@@ -72,6 +72,8 @@ class Container {
     }
     // Show 'container' to the webpage
     showContainer(choice) {
+        // If there is no 'div.container' inside <main>, then create one.
+        this.addNewContainer();
         const container = document.querySelector('div.container');
         if (choice === 16) {
             container.style.cssText = `
