@@ -211,6 +211,23 @@ class Container {
 
     return excludesBoxes;
   }
+
+  // Remove top border of all '.box' that is not of part of the first row inside of 'div.container'.
+  public removeTopBorder() {
+    const boxes = document.querySelectorAll(".box");
+    const firstRowBoxes = this.getExcludedBoxes('row');
+
+    if (this.getBoxesModel()) { // When there are '.box' inside 'div.container'.
+      for (let i = 0; i < boxes.length; i += 1) {
+        const box = boxes[i] as HTMLElement;
+        
+        // when 'box' is NOT one of 'firstRowBoxes', then remove 'box''s top border.
+        if (!firstRowBoxes.includes(box)) {
+          box.style.borderTop = 'none';
+        }
+      }
+    }
+  }
 }
 
 const container = Container.getInstance();

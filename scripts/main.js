@@ -175,5 +175,20 @@ class Container {
         }
         return excludesBoxes;
     }
+    // Remove top border of all '.box' that is not of part of the first row inside of 'div.container'.
+    removeTopBorder() {
+        const boxes = document.querySelectorAll(".box");
+        const firstRowBoxes = this.getExcludedBoxes('row');
+        console.log(firstRowBoxes);
+        if (this.getBoxesModel()) { // When there are '.box' inside 'div.container'.
+            for (let i = 0; i < boxes.length; i += 1) {
+                const box = boxes[i];
+                if (!firstRowBoxes.includes(box)) {
+                    box.style.borderTop = 'none';
+                }
+            }
+        }
+        console.log(firstRowBoxes);
+    }
 }
 const container = Container.getInstance();
