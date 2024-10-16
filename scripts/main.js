@@ -179,16 +179,29 @@ class Container {
     removeTopBorder() {
         const boxes = document.querySelectorAll(".box");
         const firstRowBoxes = this.getExcludedBoxes('row');
-        console.log(firstRowBoxes);
         if (this.getBoxesModel()) { // When there are '.box' inside 'div.container'.
             for (let i = 0; i < boxes.length; i += 1) {
                 const box = boxes[i];
+                // when 'box' is NOT one of 'firstRowBoxes', then remove 'box''s top border.
                 if (!firstRowBoxes.includes(box)) {
                     box.style.borderTop = 'none';
                 }
             }
         }
-        console.log(firstRowBoxes);
+    }
+    // Remove left border of all '.box' that is not of part of the first column inside of 'div.container'.
+    removeLeftBorder() {
+        const boxes = document.querySelectorAll(".box");
+        const firstColumnBoxes = this.getExcludedBoxes('column');
+        if (this.getBoxesModel()) { // When there are '.box' inside 'div.container'.
+            for (let i = 0; i < boxes.length; i += 1) {
+                const box = boxes[i];
+                // when 'box' is NOT one of 'firstColumnBoxes', then remove 'box''s top border.
+                if (!firstColumnBoxes.includes(box)) {
+                    box.style.borderLeft = 'none';
+                }
+            }
+        }
     }
 }
 const container = Container.getInstance();
