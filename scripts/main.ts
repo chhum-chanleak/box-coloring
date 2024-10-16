@@ -61,16 +61,16 @@ class Container {
   }
 
   // A box for container
-  public createBox = (choice: number):  Element => {
+  public createBox = (choice: number = 30):  Element => {
     const box = document.createElement("div");
 
     // increase '_numberOfBoxes' by 1.
     this.increaseNumberOfBoxes();
     box.setAttribute("class", `box ${this._numberOfBoxes}`);
 
-    if (choice === 16) {      
+    if (choice === 30) {      
       box.style.cssText = `width: 20px; height: 20px; border: 1px solid #000;`;
-    } else if (choice === 32) {
+    } else if (choice === 19) {
       box.style.cssText = `width: 40px; height: 40px; border: 1px solid #000;`;
     } else {
       throw new Error("The available choice is either 16 or 32.");

@@ -3,15 +3,15 @@ class Container {
     // Private constructor prevents direct instantiation from outside the class.
     constructor() {
         // A box for container
-        this.createBox = (choice) => {
+        this.createBox = (choice = 30) => {
             const box = document.createElement("div");
             // increase '_numberOfBoxes' by 1.
             this.increaseNumberOfBoxes();
             box.setAttribute("class", `box ${this._numberOfBoxes}`);
-            if (choice === 16) {
+            if (choice === 30) {
                 box.style.cssText = `width: 20px; height: 20px; border: 1px solid #000;`;
             }
-            else if (choice === 32) {
+            else if (choice === 19) {
                 box.style.cssText = `width: 40px; height: 40px; border: 1px solid #000;`;
             }
             else {
