@@ -120,7 +120,7 @@ class Container {
     // Fill 'container' with big boxes.
     this.fillContainer(choice);
     } else {
-      throw new Error("The available choice is either 16 or 32.");
+      throw new Error("The available choice is either 30 or 19.");
     }
   }
 
