@@ -19,7 +19,7 @@ class Container {
             }
             return box;
         };
-        console.log("container has been created");
+        console.log("container has been created.");
         this._className = "";
         this._numberOfBoxes = 0;
         this._currentColor = "#00f";

@@ -9,7 +9,7 @@ class Container {
 
   // Private constructor prevents direct instantiation from outside the class.
   private constructor() {
-    console.log("container has been created");
+    console.log("container has been created.");
 
     this._className = "";
     this._numberOfBoxes = 0;
