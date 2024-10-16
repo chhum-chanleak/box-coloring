@@ -83,7 +83,7 @@ class Container {
             // Fill 'container' with small boxes.
             this.fillContainer(choice);
         }
-        else if (choice === 19) {
+        else if (choice === 17) {
             container.style.cssText = `
         width: 700px;
         height: 700px;
@@ -92,7 +92,7 @@ class Container {
             this.fillContainer(choice);
         }
         else {
-            throw new Error("The available choice is either 30 or 19.");
+            throw new Error("The available choice is either 30 or 17.");
         }
     }
     // Fill 'container' with boxes.
