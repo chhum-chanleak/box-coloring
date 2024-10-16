@@ -75,12 +75,16 @@ class Container {
         width: 600px;
         height: 600px;
       `;
+            // Fill 'container' with small boxes.
+            this.fillContainer(choice);
         }
         else if (choice === 32) {
             container.style.cssText = `
         width: 700px;
         height: 700px;
     `;
+            // Fill 'container' with big boxes.
+            this.fillContainer(choice);
         }
         else {
             throw new Error("The available choice is either 16 or 32.");
