@@ -24,7 +24,7 @@ class Container {
         this._numberOfBoxes = 0;
         this._currentColor = "#00f";
         this._node = document.querySelector('div.container');
-        this._colorIsRandom = false;
+        this._colorIsMultiple = false;
     }
     // Static method to provide access to the instance.
     static getInstance() {
@@ -58,16 +58,21 @@ class Container {
     get node() {
         return this._node;
     }
-    get colorIsRandom() {
-        return this._colorIsRandom;
+    get colorIsMultiple() {
+        return this._colorIsMultiple;
     }
-    set colorIsRandom(state) {
-        this._colorIsRandom = state;
+    set colorIsMultiple(state) {
+        this._colorIsMultiple = state;
     }
     // Handle event which changes background color of 'box' when hovering.
     handleBox(event) {
         const target = event.target;
-        target.style.backgroundColor = `${container.currentColor}`;
+        if (this._colorIsMultiple) {
+            target.style.backgroundColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
+        }
+        else {
+            target.style.backgroundColor = `${container.currentColor}`;
+        }
     }
     // Apply 'mouseenter' event to all boxes.
     applyEventToAllBoxes() {

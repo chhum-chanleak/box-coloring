@@ -6,7 +6,7 @@ class Container {
   public _numberOfBoxes: number;
   public _currentColor: string;
   public _node: HTMLElement;
-  public _colorIsRandom: boolean;
+  public _colorIsMultiple: boolean;
 
   // Private constructor prevents direct instantiation from outside the class.
   private constructor() {
@@ -16,7 +16,7 @@ class Container {
     this._numberOfBoxes = 0;
     this._currentColor = "#00f";
     this._node = document.querySelector('div.container') as HTMLElement;
-    this._colorIsRandom = false;
+    this._colorIsMultiple = false;
   }
 
   // Static method to provide access to the instance.
@@ -62,12 +62,12 @@ class Container {
     return this._node;
   }
 
-  get colorIsRandom(): boolean {
-    return this._colorIsRandom;
+  get colorIsMultiple(): boolean {
+    return this._colorIsMultiple;
   }
 
-  set colorIsRandom(state: boolean) {
-    this._colorIsRandom = state;
+  set colorIsMultiple(state: boolean) {
+    this._colorIsMultiple = state;
   }
 
   // A box for container
@@ -439,6 +439,7 @@ const getRandomNumberBetweenTwoNumbers: GetRandomNumberBetweenTwoNumbers =  (min
     r: Math.floor(Math.random() * (max - min) + min),
     g: Math.floor(Math.random() * (max - min) + min), b: Math.floor(Math.random() * (max - min) + min)
   });
+
 
 const container = Container.getInstance();
 
