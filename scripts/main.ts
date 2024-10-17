@@ -279,8 +279,13 @@ class ThirtyByThirty implements Button {
     const THIRTY_BY_THIRTY_BUTTON = document.createElement("button") as HTMLElement;
     const { background_color, textContent } = this._style;
 
+    // "click" event handling function for this 'button'.
+    const handler = () => container.showContainer(30);
+
     THIRTY_BY_THIRTY_BUTTON.style.backgroundColor = `${background_color}`;
     THIRTY_BY_THIRTY_BUTTON.textContent = `${textContent}`;
+    // Apply event to this 'button', which replace 'div.container' with a new 'div.container'.
+    THIRTY_BY_THIRTY_BUTTON.addEventListener("click", handler);
 
     return THIRTY_BY_THIRTY_BUTTON;
   }
