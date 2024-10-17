@@ -212,4 +212,119 @@ class Container {
         }
     }
 }
+// Concrete Button
+class ColorPallete {
+    constructor() {
+        this._style = {
+            background_color: "#fff",
+            textContent: "",
+        };
+    }
+    createNode() {
+        const COLOR_PALLETE_BUTTON = document.createElement("button");
+        const { background_color, textContent } = this._style;
+        COLOR_PALLETE_BUTTON.style.backgroundColor = `${background_color}`;
+        COLOR_PALLETE_BUTTON.textContent = "Test";
+        return COLOR_PALLETE_BUTTON;
+    }
+}
+class ThirtyByThirty {
+    constructor() {
+        this._style = {
+            background_color: "#FF0000",
+            textContent: "30 x 30",
+        };
+    }
+    createNode() {
+        const THIRTY_BY_THIRTY_BUTTON = document.createElement("button");
+        const { background_color, textContent } = this._style;
+        THIRTY_BY_THIRTY_BUTTON.style.backgroundColor = `${background_color}`;
+        THIRTY_BY_THIRTY_BUTTON.textContent = `${textContent}`;
+        return THIRTY_BY_THIRTY_BUTTON;
+    }
+}
+class SeventeenBySeventeen {
+    constructor() {
+        this._style = {
+            background_color: "#FF7F00",
+            textContent: "17 x 17",
+        };
+    }
+    createNode() {
+        const SEVENTEEN_BY_SEVENTEEN_BUTTON = document.createElement("button");
+        const { background_color, textContent } = this._style;
+        SEVENTEEN_BY_SEVENTEEN_BUTTON.style.backgroundColor = `${background_color}`;
+        SEVENTEEN_BY_SEVENTEEN_BUTTON.textContent = `${textContent}`;
+        return SEVENTEEN_BY_SEVENTEEN_BUTTON;
+    }
+}
+class RandomColor {
+    constructor() {
+        this._style = {
+            background_color: "#FFFF00",
+            textContent: "Random Color",
+        };
+    }
+    createNode() {
+        const RANDOM_BUTTON = document.createElement("button");
+        const { background_color, textContent } = this._style;
+        RANDOM_BUTTON.style.backgroundColor = `${background_color}`;
+        RANDOM_BUTTON.textContent = `${textContent}`;
+        return RANDOM_BUTTON;
+    }
+}
+class MultiColors {
+    constructor() {
+        this._style = {
+            background_color: "#00FF00",
+            textContent: "Multi-Colors",
+        };
+    }
+    createNode() {
+        const MULTI_COLORS_BUTTON = document.createElement("button");
+        const { background_color, textContent } = this._style;
+        MULTI_COLORS_BUTTON.style.backgroundColor = `${background_color}`;
+        MULTI_COLORS_BUTTON.textContent = `${textContent}`;
+        return MULTI_COLORS_BUTTON;
+    }
+}
+class Refresh {
+    constructor() {
+        this._style = {
+            background_color: "#0000FF",
+            textContent: "Refresh",
+        };
+    }
+    createNode() {
+        const REFRESH_BUTTON = document.createElement("button");
+        const { background_color, textContent } = this._style;
+        REFRESH_BUTTON.style.backgroundColor = `${background_color}`;
+        REFRESH_BUTTON.textContent = `${textContent}`;
+        return REFRESH_BUTTON;
+    }
+}
+// Button factory
+class ButtonFactory {
+    static createButton(name) {
+        switch (name) {
+            case "pallete":
+                return new ColorPallete();
+            case "30x30":
+                return new ThirtyByThirty();
+            case "17x17":
+                return new SeventeenBySeventeen();
+            case "random":
+                return new RandomColor();
+            case "multi":
+                return new MultiColors();
+            case "refresh":
+                return new Refresh();
+            default:
+                throw new Error(`${name} button is not available.`);
+        }
+    }
+    showDetail() {
+        console.log("Available buttons are : pallete, 30x30, 17x17, random, multi, and refresh.");
+    }
+}
 const container = Container.getInstance();

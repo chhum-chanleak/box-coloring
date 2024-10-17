@@ -254,4 +254,144 @@ class Container {
   }
 }
 
+// Button factory pattern
+// Button Interface
+interface Button {
+  _style: {
+    background_color: string,
+    textContent: string,
+  };
+
+  createNode(): HTMLElement;
+}
+
+// Concrete Button
+class ColorPallete implements Button {
+  _style = {
+    background_color: "#fff",
+    textContent: "",
+  };
+
+ public createNode(): HTMLElement {
+    const COLOR_PALLETE_BUTTON = document.createElement("button") as HTMLElement;
+    const { background_color, textContent } = this._style;
+
+    COLOR_PALLETE_BUTTON.style.backgroundColor = `${background_color}`;
+    COLOR_PALLETE_BUTTON.textContent = "Test";
+
+    return COLOR_PALLETE_BUTTON;
+  }
+}
+
+class ThirtyByThirty implements Button {
+  _style = {
+    background_color: "#FF0000",
+    textContent: "30 x 30",
+  };
+
+ public createNode(): HTMLElement {
+    const THIRTY_BY_THIRTY_BUTTON = document.createElement("button") as HTMLElement;
+    const { background_color, textContent } = this._style;
+
+    THIRTY_BY_THIRTY_BUTTON.style.backgroundColor = `${background_color}`;
+    THIRTY_BY_THIRTY_BUTTON.textContent = `${textContent}`;
+
+    return THIRTY_BY_THIRTY_BUTTON;
+  }
+}
+
+class SeventeenBySeventeen implements Button {
+  _style = {
+    background_color: "#FF7F00",
+    textContent: "17 x 17",
+  };
+
+ public createNode(): HTMLElement {
+    const SEVENTEEN_BY_SEVENTEEN_BUTTON = document.createElement("button") as HTMLElement;
+    const { background_color, textContent } = this._style;
+
+    SEVENTEEN_BY_SEVENTEEN_BUTTON.style.backgroundColor = `${background_color}`;
+    SEVENTEEN_BY_SEVENTEEN_BUTTON.textContent = `${textContent}`;
+
+    return SEVENTEEN_BY_SEVENTEEN_BUTTON;
+  }
+}
+
+class RandomColor implements Button {
+  _style = {
+    background_color: "#FFFF00",
+    textContent: "Random Color",
+  };
+
+ public createNode(): HTMLElement {
+    const RANDOM_BUTTON = document.createElement("button") as HTMLElement;
+    const { background_color, textContent } = this._style;
+
+    RANDOM_BUTTON.style.backgroundColor = `${background_color}`;
+    RANDOM_BUTTON.textContent = `${textContent}`;
+
+    return RANDOM_BUTTON;
+  }
+}
+
+class MultiColors implements Button {
+  _style = {
+    background_color: "#00FF00",
+    textContent: "Multi-Colors",
+  };
+
+  createNode(): HTMLElement {
+    const MULTI_COLORS_BUTTON = document.createElement("button") as HTMLElement;
+    const { background_color, textContent } = this._style;
+
+    MULTI_COLORS_BUTTON.style.backgroundColor = `${background_color}`;
+    MULTI_COLORS_BUTTON.textContent = `${textContent}`;
+
+    return MULTI_COLORS_BUTTON;
+  }
+}
+
+class Refresh implements Button {
+  _style = {
+    background_color: "#0000FF",
+    textContent: "Refresh",
+  };
+
+  createNode(): HTMLElement {
+    const REFRESH_BUTTON = document.createElement("button") as HTMLElement;
+    const { background_color, textContent } = this._style;
+
+    REFRESH_BUTTON.style.backgroundColor = `${background_color}`;
+    REFRESH_BUTTON.textContent = `${textContent}`;
+
+    return REFRESH_BUTTON;
+  }
+}
+
+// Button factory
+class ButtonFactory {
+  public static createButton(name: string): Button {
+    switch(name) {
+      case "pallete":
+        return new ColorPallete();
+      case "30x30":
+        return new ThirtyByThirty();
+      case "17x17":
+        return new SeventeenBySeventeen();
+      case "random":
+        return new RandomColor();
+      case "multi":
+        return new MultiColors();
+      case "refresh":
+        return new Refresh();
+      default:
+        throw new Error(`${name} button is not available.`);
+    }
+  }
+
+  public showDetail(): void {
+    console.log("Available buttons are : pallete, 30x30, 17x17, random, multi, and refresh.");
+  }
+}
+
 const container = Container.getInstance();
