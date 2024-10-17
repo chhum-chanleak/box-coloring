@@ -418,6 +418,10 @@ const deployButtons: DeployButtons = () => {
   }
 };
 
+type GetRandomNumberBetweenTwoNumbers = (min: number, max: number) => number;
+// Example: min = 1, max = 10 => (number between 1 and 10). Use this function with a function that generates random color.
+const getRandomNumberBetweenTwoNumbers: GetRandomNumberBetweenTwoNumbers =  (min: number, max: number) => Math.floor(Math.random() * (max - min) + min);
+
 const container = Container.getInstance();
 
 // Call 'deployButtons()' when DOM content loaded.
