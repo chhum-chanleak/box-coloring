@@ -102,6 +102,8 @@ class Container {
         else {
             throw new Error("The available choice is either 30 or 17.");
         }
+        // Apply event to each '.box' inside 'div.container'.
+        this.applyEventToAllBoxes();
     }
     // Fill 'container' with boxes.
     fillContainer(choice) {
@@ -333,5 +335,5 @@ const deployButtons = () => {
     }
 };
 const container = Container.getInstance();
-// Handle page load
+// Call 'deployButtons()' when DOM content loaded.
 document.addEventListener("DOMContentLoaded", deployButtons);

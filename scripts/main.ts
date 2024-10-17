@@ -129,6 +129,9 @@ class Container {
     } else {
       throw new Error("The available choice is either 30 or 17.");
     }
+
+    // Apply event to each '.box' inside 'div.container'.
+    this.applyEventToAllBoxes();
   }
 
   // Fill 'container' with boxes.
