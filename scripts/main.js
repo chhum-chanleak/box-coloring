@@ -244,8 +244,12 @@ class SeventeenBySeventeen {
     createNode() {
         const SEVENTEEN_BY_SEVENTEEN_BUTTON = document.createElement("button");
         const { background_color, textContent } = this._style;
+        // "click" event handling function for this 'button'.
+        const handler = () => container.showContainer(17);
         SEVENTEEN_BY_SEVENTEEN_BUTTON.style.backgroundColor = `${background_color}`;
         SEVENTEEN_BY_SEVENTEEN_BUTTON.textContent = `${textContent}`;
+        // Apply event to this 'button', which replace 'div.container' with a new 'div.container'.
+        SEVENTEEN_BY_SEVENTEEN_BUTTON.addEventListener("click", handler);
         return SEVENTEEN_BY_SEVENTEEN_BUTTON;
     }
 }
