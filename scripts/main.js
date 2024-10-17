@@ -24,6 +24,7 @@ class Container {
         this._numberOfBoxes = 0;
         this._currentColor = "#00f";
         this._node = document.querySelector('div.container');
+        this._colorIsRandom = false;
     }
     // Static method to provide access to the instance.
     static getInstance() {
@@ -56,6 +57,12 @@ class Container {
     }
     get node() {
         return this._node;
+    }
+    get colorIsRandom() {
+        return this._colorIsRandom;
+    }
+    set colorIsRandom(state) {
+        this._colorIsRandom = state;
     }
     // Handle event which changes background color of 'box' when hovering.
     handleBox(event) {
