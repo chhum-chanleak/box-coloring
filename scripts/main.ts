@@ -266,23 +266,6 @@ interface Button {
 }
 
 // Concrete Button
-class ColorPallete implements Button {
-  _style = {
-    background_color: "#fff",
-    textContent: "",
-  };
-
- public createNode(): HTMLElement {
-    const COLOR_PALLETE_BUTTON = document.createElement("button") as HTMLElement;
-    const { background_color, textContent } = this._style;
-
-    COLOR_PALLETE_BUTTON.style.backgroundColor = `${background_color}`;
-    COLOR_PALLETE_BUTTON.textContent = "Test";
-
-    return COLOR_PALLETE_BUTTON;
-  }
-}
-
 class ThirtyByThirty implements Button {
   _style = {
     background_color: "#FF0000",
@@ -372,8 +355,6 @@ class Refresh implements Button {
 class ButtonFactory {
   public static createButton(name: string): Button {
     switch(name) {
-      case "pallete":
-        return new ColorPallete();
       case "30x30":
         return new ThirtyByThirty();
       case "17x17":
@@ -396,7 +377,6 @@ class ButtonFactory {
 
 // Merge namespace with class 'ButtonFactory'
 namespace ButtonFactory {
-  export const COLOR_PALLETE_BUTTON = ButtonFactory.createButton("pallete");
   export const THIRTY_BY_THIRTY_BUTTON = ButtonFactory.createButton("30x30");
   export const SEVENTEEN_BY_SEVENTEEN_BUTTON = ButtonFactory.createButton("17x17");
   export const RANDOM_BUTTON = ButtonFactory.createButton("random");

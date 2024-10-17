@@ -213,21 +213,6 @@ class Container {
     }
 }
 // Concrete Button
-class ColorPallete {
-    constructor() {
-        this._style = {
-            background_color: "#fff",
-            textContent: "",
-        };
-    }
-    createNode() {
-        const COLOR_PALLETE_BUTTON = document.createElement("button");
-        const { background_color, textContent } = this._style;
-        COLOR_PALLETE_BUTTON.style.backgroundColor = `${background_color}`;
-        COLOR_PALLETE_BUTTON.textContent = "Test";
-        return COLOR_PALLETE_BUTTON;
-    }
-}
 class ThirtyByThirty {
     constructor() {
         this._style = {
@@ -307,8 +292,6 @@ class Refresh {
 class ButtonFactory {
     static createButton(name) {
         switch (name) {
-            case "pallete":
-                return new ColorPallete();
             case "30x30":
                 return new ThirtyByThirty();
             case "17x17":
@@ -327,4 +310,26 @@ class ButtonFactory {
         console.log("Available buttons are : pallete, 30x30, 17x17, random, multi, and refresh.");
     }
 }
+// Merge namespace with class 'ButtonFactory'
+(function (ButtonFactory) {
+    ButtonFactory.THIRTY_BY_THIRTY_BUTTON = ButtonFactory.createButton("30x30");
+    ButtonFactory.SEVENTEEN_BY_SEVENTEEN_BUTTON = ButtonFactory.createButton("17x17");
+    ButtonFactory.RANDOM_BUTTON = ButtonFactory.createButton("random");
+    ButtonFactory.MULTI_COLORS_BUTTON = ButtonFactory.createButton("multi");
+    ButtonFactory.REFRESH_BUTTON = ButtonFactory.createButton("refresh");
+})(ButtonFactory || (ButtonFactory = {}));
+const deployButtons = () => {
+    const DIV_BUTTONS = document.querySelector("div.buttons");
+    const BUTTONS = [
+        ButtonFactory.THIRTY_BY_THIRTY_BUTTON.createNode(),
+        ButtonFactory.SEVENTEEN_BY_SEVENTEEN_BUTTON.createNode(),
+        ButtonFactory.RANDOM_BUTTON.createNode(),
+        ButtonFactory.MULTI_COLORS_BUTTON.createNode(),
+        ButtonFactory.REFRESH_BUTTON.createNode(),
+    ];
+    for (let i = 0; i < BUTTONS.length; i += 1) {
+        // Append buttons to 'div.buttons'.
+        DIV_BUTTONS.appendChild(BUTTONS[i]);
+    }
+};
 const container = Container.getInstance();
