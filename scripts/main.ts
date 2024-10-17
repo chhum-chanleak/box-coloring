@@ -394,4 +394,14 @@ class ButtonFactory {
   }
 }
 
+// Merge namespace with class 'ButtonFactory'
+namespace ButtonFactory {
+  export const COLOR_PALLETE_BUTTON = ButtonFactory.createButton("pallete");
+  export const THIRTY_BY_THIRTY_BUTTON = ButtonFactory.createButton("30x30");
+  export const SEVENTEEN_BY_SEVENTEEN_BUTTON = ButtonFactory.createButton("17x17");
+  export const RANDOM_BUTTON = ButtonFactory.createButton("random");
+  export const MULTI_COLORS_BUTTON = ButtonFactory.createButton("multi");
+  export const REFRESH_BUTTON = ButtonFactory.createButton("refresh");
+}
+
 const container = Container.getInstance();
