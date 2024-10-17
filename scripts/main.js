@@ -333,3 +333,5 @@ const deployButtons = () => {
     }
 };
 const container = Container.getInstance();
+// Handle page load
+document.addEventListener("DOMContentLoaded", deployButtons);

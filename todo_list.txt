@@ -100,3 +100,13 @@ Box Coloring:
 <-
 
 Pseudo Code:
+->
+FUNCTION deployButtons():
+  INIT DIV_BUTTONS = div.buttons
+  INIT BUTTONS = [buttons of 'ButtonFactory']
+
+  FOR BUTTON of BUTTONs:
+    append BUTTON to DIV_BUTTONs
+  ENDFOR
+ENDFUNCTION
+<-

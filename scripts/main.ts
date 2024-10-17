@@ -406,3 +406,6 @@ const deployButtons: DeployButtons = () => {
 };
 
 const container = Container.getInstance();
+
+// Call 'deployButtons()' when DOM content loaded.
+document.addEventListener("DOMContentLoaded", deployButtons);
