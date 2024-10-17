@@ -306,7 +306,7 @@ class SeventeenBySeventeen implements Button {
 
     SEVENTEEN_BY_SEVENTEEN_BUTTON.style.backgroundColor = `${background_color}`;
     SEVENTEEN_BY_SEVENTEEN_BUTTON.textContent = `${textContent}`;
-      // Apply event to this 'button', which replace 'div.container' with a new 'div.container'.
+    // Apply event to this 'button', which replace 'div.container' with a new 'div.container'.
     SEVENTEEN_BY_SEVENTEEN_BUTTON.addEventListener("click", handler);
 
     return SEVENTEEN_BY_SEVENTEEN_BUTTON;
@@ -418,9 +418,17 @@ const deployButtons: DeployButtons = () => {
   }
 };
 
-type GetRandomNumberBetweenTwoNumbers = (min: number, max: number) => number;
+type GetRandomNumberBetweenTwoNumbers = (min: number, max: number) => {
+  r: number,
+  g: number,
+  b: number,
+};
 // Example: min = 1, max = 10 => (number between 1 and 10). Use this function with a function that generates random color.
-const getRandomNumberBetweenTwoNumbers: GetRandomNumberBetweenTwoNumbers =  (min: number, max: number) => Math.floor(Math.random() * (max - min) + min);
+const getRandomNumberBetweenTwoNumbers: GetRandomNumberBetweenTwoNumbers =  (min: number, max: number) => 
+  ({ 
+    r: Math.floor(Math.random() * (max - min) + min),
+    g: Math.floor(Math.random() * (max - min) + min), b: Math.floor(Math.random() * (max - min) + min)
+  });
 
 const container = Container.getInstance();
 

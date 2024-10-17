@@ -342,8 +342,11 @@ const deployButtons = () => {
         DIV_BUTTONS.appendChild(BUTTONS[i]);
     }
 };
-// Example: min = 1, max = 10 => (number between 1 and 10).
-const getRandomNumberBetweenTwoNumbers = (min, max) => Math.floor(Math.random() * (max - min) + min);
+// Example: min = 1, max = 10 => (number between 1 and 10). Use this function with a function that generates random color.
+const getRandomNumberBetweenTwoNumbers = (min, max) => ({
+    r: Math.floor(Math.random() * (max - min) + min),
+    g: Math.floor(Math.random() * (max - min) + min), b: Math.floor(Math.random() * (max - min) + min)
+});
 const container = Container.getInstance();
 // Call 'deployButtons()' when DOM content loaded.
 document.addEventListener("DOMContentLoaded", deployButtons);
