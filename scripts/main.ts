@@ -384,4 +384,25 @@ namespace ButtonFactory {
   export const REFRESH_BUTTON = ButtonFactory.createButton("refresh");
 }
 
+// Utility functions
+
+// Add buttons of class 'ButtonFactory' to 'div.buttons'.
+type DeployButtons = () => void;
+const deployButtons: DeployButtons = () => {
+  const DIV_BUTTONS = document.querySelector("div.buttons") as HTMLElement;
+
+  const BUTTONS = [
+    ButtonFactory.THIRTY_BY_THIRTY_BUTTON.createNode(),
+    ButtonFactory.SEVENTEEN_BY_SEVENTEEN_BUTTON.createNode(),
+    ButtonFactory.RANDOM_BUTTON.createNode(),
+    ButtonFactory.MULTI_COLORS_BUTTON.createNode(),
+    ButtonFactory.REFRESH_BUTTON.createNode(),
+  ];
+
+  for (let i = 0; i < BUTTONS.length; i += 1) {
+    // Append buttons to 'div.buttons'.
+    DIV_BUTTONS.appendChild(BUTTONS[i]);
+  }
+};
+
 const container = Container.getInstance();
