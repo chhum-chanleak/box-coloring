@@ -388,6 +388,16 @@ const applyRandomColorOnHover = () => {
         }
     }
 };
+// Cause 'Multi-Color' button to set '_currentColor' of class 'Container' to have a value of a random color and also set 'container.colorIsMultiple' to 'true'.
+const handleMultiColorsButton = () => {
+    // switch value of 'container.colorIsMultiple' from 'false' to 'true'.
+    toggleColorIsMultiple();
+    const MULTI_COLORS_BUTTON = document.querySelector("button[style*='background-color: rgb(0, 255, 0)']");
+    // Handling function for 'Multi-Color' button.
+    const handler = () => applyRandomColorOnHover();
+    // Next '.box' will get a different background-color compare to the previous background-color of '.box'.
+    MULTI_COLORS_BUTTON.addEventListener("click", handler);
+};
 // Call these functions when DOM content loaded.
 const handleDOMContentLoaded = () => {
     const showContainer = () => container.showContainer();
