@@ -450,13 +450,9 @@ const generateRandomColor = () => {
 
 // Cause 'Random Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
 const handleRandomColorButton = (): void => {
-  // Handling function for 'Random Color' button.
   const RANDOM_COLOR_BUTTON = document.querySelector("button[style*='background-color: rgb(255, 255, 0)']");
-  const handler = () => {
-    container.currentColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
-  };
 
-  RANDOM_COLOR_BUTTON?.addEventListener("click", handler);
+  RANDOM_COLOR_BUTTON?.addEventListener("click", generateRandomColor);
 };
 
 // Cause next '.box' to have a different background-color from the previous '.box' when a cursor hovers on.
