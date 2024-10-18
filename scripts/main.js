@@ -67,12 +67,7 @@ class Container {
     // Handle event which changes background color of 'box' when hovering.
     handleBox(event) {
         const target = event.target;
-        if (this._colorIsMultiple) {
-            target.style.backgroundColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
-        }
-        else {
-            target.style.backgroundColor = `${container.currentColor}`;
-        }
+        target.style.backgroundColor = `${container.currentColor}`;
     }
     // Apply 'mouseenter' event to all boxes.
     applyEventToAllBoxes() {
@@ -355,10 +350,23 @@ const deployButtons = () => {
     }
 };
 // Example: min = 1, max = 10 => (number between 1 and 10). Use this function with a function that generates random color.
-const getRandomNumberBetweenTwoNumbers = (min, max) => ({
-    r: Math.floor(Math.random() * (max - min) + min),
-    g: Math.floor(Math.random() * (max - min) + min), b: Math.floor(Math.random() * (max - min) + min)
-});
+const getRandomNumberBetweenTwoNumbers = (min, max) => {
+    return {
+        r: Math.floor(Math.random() * (max - min) + min),
+        g: Math.floor(Math.random() * (max - min) + min), b: Math.floor(Math.random() * (max - min) + min)
+    };
+};
 const container = Container.getInstance();
 // Call 'deployButtons()' when DOM content loaded.
 document.addEventListener("DOMContentLoaded", deployButtons);
+// Handling functions
+// Cause 'Random Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
+const handleRandomColorButton = () => {
+    // Handling function for 'Random Color' button.
+    const RANDOM_COLOR_BUTTON = document.querySelector("button[style*='background-color: rgb(255, 255, 0)']");
+    const handler = () => {
+        // container.currentColor = `#${Math.floor((Math.random() * 10))}f${Math.floor((Math.random() * 10))}`;
+        container.currentColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
+    };
+    RANDOM_COLOR_BUTTON === null || RANDOM_COLOR_BUTTON === void 0 ? void 0 : RANDOM_COLOR_BUTTON.addEventListener("click", handler);
+};
