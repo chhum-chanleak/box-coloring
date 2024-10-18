@@ -441,15 +441,6 @@ const getRandomNumberBetweenTwoNumbers: GetRandomNumberBetweenTwoNumbers = (min:
   };
 }
 
-// set 'container.colorIsMultiple' to true.
-const toggleColorIsMultiple = (): void => {
-  if (container.colorIsMultiple) {
-    container.colorIsMultiple = false;
-  } else {
-    container.colorIsMultiple = true;
-  }
-};
-
 // Handling functions
 
 // Cause 'Random Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
