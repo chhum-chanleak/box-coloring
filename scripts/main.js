@@ -356,17 +356,17 @@ const getRandomNumberBetweenTwoNumbers = (min, max) => {
         g: Math.floor(Math.random() * (max - min) + min), b: Math.floor(Math.random() * (max - min) + min)
     };
 };
-const container = Container.getInstance();
-// Call 'deployButtons()' when DOM content loaded.
-document.addEventListener("DOMContentLoaded", deployButtons);
 // Handling functions
 // Cause 'Random Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
 const handleRandomColorButton = () => {
     // Handling function for 'Random Color' button.
     const RANDOM_COLOR_BUTTON = document.querySelector("button[style*='background-color: rgb(255, 255, 0)']");
     const handler = () => {
-        // container.currentColor = `#${Math.floor((Math.random() * 10))}f${Math.floor((Math.random() * 10))}`;
         container.currentColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
     };
     RANDOM_COLOR_BUTTON === null || RANDOM_COLOR_BUTTON === void 0 ? void 0 : RANDOM_COLOR_BUTTON.addEventListener("click", handler);
 };
+// Call these functions when DOM content loaded.
+document.addEventListener("DOMContentLoaded", deployButtons);
+document.addEventListener("DOMContentLoaded", handleRandomColorButton);
+const container = Container.getInstance();
