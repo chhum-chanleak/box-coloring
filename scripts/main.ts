@@ -495,13 +495,14 @@ const handleMultiColorsButton = (): void => {
   MULTI_COLORS_BUTTON.addEventListener("click", handler);
 };
 
-// Call these functions when DOM content loaded.
+// Call these functions when DOM content loads.
 const handleDOMContentLoaded = () => {
   const showContainer = () => container.showContainer();
 
   document.addEventListener("DOMContentLoaded", deployButtons);
   document.addEventListener("DOMContentLoaded", handleRandomColorButton);
   document.addEventListener("DOMContentLoaded", showContainer);
+  document.addEventListener("DOMContentLoaded", handleMultiColorsButton);
 };
 handleDOMContentLoaded();
 
