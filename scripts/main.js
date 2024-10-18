@@ -394,13 +394,13 @@ const handleMultiColorsButton = () => {
     // Handling function for 'Multi-Color' button.
     const handler = () => {
         // switch value of 'container.colorIsMultiple' from 'false' to 'true'.
-        toggleColorIsMultiple();
+        container.colorIsMultiple = true;
         applyRandomColorOnHover();
     };
     // Next '.box' will get a different background-color compare to the previous background-color of '.box'.
     MULTI_COLORS_BUTTON.addEventListener("click", handler);
 };
-// Call these functions when DOM content loaded.
+// Call these functions when DOM content loads.
 const handleDOMContentLoaded = () => {
     const showContainer = () => container.showContainer();
     document.addEventListener("DOMContentLoaded", deployButtons);

@@ -487,7 +487,7 @@ const handleMultiColorsButton = (): void => {
   // Handling function for 'Multi-Color' button.
   const handler = () => {
     // switch value of 'container.colorIsMultiple' from 'false' to 'true'.
-    toggleColorIsMultiple();
+    container.colorIsMultiple = true;
     applyRandomColorOnHover();
   }
   
