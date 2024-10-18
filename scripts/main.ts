@@ -459,19 +459,16 @@ const applyRandomColorOnHover = () => {
   const boxes = document.querySelectorAll(".box");
 
   // Handling function for each '.box'.
-  const handler = (event: MouseEvent) => {
-    const target = event.target as HTMLElement;
+  const handler = () => {
 
-    target.style.backgroundColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
+    container.currentColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
   };
 
-  if (container.colorIsMultiple) {
-    for (let i = 0 ; i < boxes.length; i += 1) {
-      const box = boxes[i] as HTMLElement;
-      
-      box.addEventListener("mouseenter", handler);
-    }
-  }    
+  for (let i = 0 ; i < boxes.length; i += 1) {
+    const box = boxes[i] as HTMLElement;
+    
+    box.addEventListener("mouseenter", handler);
+  }
 };
 
 // Cause 'Multi-Color' button to set '_currentColor' of class 'Container' to have a value of a random color and also set 'container.colorIsMultiple' to 'true'.
