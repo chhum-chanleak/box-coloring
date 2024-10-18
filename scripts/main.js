@@ -356,15 +356,6 @@ const getRandomNumberBetweenTwoNumbers = (min, max) => {
         g: Math.floor(Math.random() * (max - min) + min), b: Math.floor(Math.random() * (max - min) + min)
     };
 };
-// set 'container.colorIsMultiple' to true.
-const toggleColorIsMultiple = () => {
-    if (container.colorIsMultiple) {
-        container.colorIsMultiple = false;
-    }
-    else {
-        container.colorIsMultiple = true;
-    }
-};
 // Handling functions
 // Cause 'Random Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
 const handleRandomColorButton = () => {
@@ -378,13 +369,15 @@ const handleRandomColorButton = () => {
 // Cause next '.box' to have a different background-color from the previous '.box' when a cursor hovers on.
 const applyRandomColorOnHover = () => {
     const boxes = document.querySelectorAll(".box");
+    // Handling function for each '.box'.
+    const handler = (event) => {
+        const target = event.target;
+        target.style.backgroundColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
+    };
     if (container.colorIsMultiple) {
         for (let i = 0; i < boxes.length; i += 1) {
             const box = boxes[i];
-            box.addEventListener("mouseenter", (event) => {
-                const target = event.target;
-                target.style.backgroundColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
-            });
+            box.addEventListener("mouseenter", handler);
         }
     }
 };

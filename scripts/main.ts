@@ -458,15 +458,18 @@ const handleRandomColorButton = (): void => {
 const applyRandomColorOnHover = () => {
   const boxes = document.querySelectorAll(".box");
 
+  // Handling function for each '.box'.
+  const handler = (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+
+    target.style.backgroundColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
+  };
+
   if (container.colorIsMultiple) {
     for (let i = 0 ; i < boxes.length; i += 1) {
       const box = boxes[i] as HTMLElement;
       
-      box.addEventListener("mouseenter", (event: MouseEvent) => {
-        const target = event.target as HTMLElement;
-
-        target.style.backgroundColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
-      });
+      box.addEventListener("mouseenter", handler);
     }
   }    
 };
