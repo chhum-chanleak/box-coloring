@@ -367,6 +367,11 @@ const handleRandomColorButton = () => {
     RANDOM_COLOR_BUTTON === null || RANDOM_COLOR_BUTTON === void 0 ? void 0 : RANDOM_COLOR_BUTTON.addEventListener("click", handler);
 };
 // Call these functions when DOM content loaded.
-document.addEventListener("DOMContentLoaded", deployButtons);
-document.addEventListener("DOMContentLoaded", handleRandomColorButton);
+const handleDOMContentLoaded = () => {
+    const showContainer = () => container.showContainer();
+    document.addEventListener("DOMContentLoaded", deployButtons);
+    document.addEventListener("DOMContentLoaded", handleRandomColorButton);
+    document.addEventListener("DOMContentLoaded", showContainer);
+};
+handleDOMContentLoaded();
 const container = Container.getInstance();
