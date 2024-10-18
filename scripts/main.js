@@ -366,6 +366,32 @@ const handleRandomColorButton = () => {
     };
     RANDOM_COLOR_BUTTON === null || RANDOM_COLOR_BUTTON === void 0 ? void 0 : RANDOM_COLOR_BUTTON.addEventListener("click", handler);
 };
+// Cause 'Multi-Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
+const handleMultiColorsButton = () => {
+    toggleColorIsMultiple();
+    // // Handling function for 'Multi-Color' button.
+    const MULTI_COLORS_BUTTON = document.querySelector("button[style*='background-color: rgb(0, 255, 0)']");
+    const handler = () => {
+        const boxes = document.querySelectorAll(".box");
+        if (container.colorIsMultiple) {
+            for (let i = 0; i < boxes.length; i += 1) {
+                const box = boxes[i];
+                box.addEventListener("mouseenter", (event) => {
+                    const target = event.target;
+                    target.style.backgroundColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
+                });
+            }
+        }
+    };
+    // Next '.box' will get a different background-color compare to the previous background-color of '.box'.
+    MULTI_COLORS_BUTTON.addEventListener("click", handler);
+};
+// set 'container.colorIsMultiple' to true.
+const toggleColorIsMultiple = () => {
+    if (!container.colorIsMultiple) {
+        container.colorIsMultiple = true;
+    }
+};
 // Call these functions when DOM content loaded.
 const handleDOMContentLoaded = () => {
     const showContainer = () => container.showContainer();
