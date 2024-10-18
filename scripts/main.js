@@ -356,6 +356,10 @@ const getRandomNumberBetweenTwoNumbers = (min, max) => {
         g: Math.floor(Math.random() * (max - min) + min), b: Math.floor(Math.random() * (max - min) + min)
     };
 };
+// Generate a random color for 'container.currentColor'.
+const generateRandomColor = () => {
+    container.currentColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
+};
 // Handling functions
 // Cause 'Random Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
 const handleRandomColorButton = () => {
