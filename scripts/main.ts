@@ -338,6 +338,13 @@ class RandomColor implements Button {
 
     return RANDOM_BUTTON;
   }
+
+  // Cause 'Random Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
+  public handleRandomColorButton = (): void => {
+    const RANDOM_COLOR_BUTTON = document.querySelector("button[style*='background-color: rgb(255, 255, 0)']");
+  
+    RANDOM_COLOR_BUTTON?.addEventListener("click", generateRandomColor);
+  };
 }
 
 class MultiColors implements Button {
@@ -447,13 +454,6 @@ const generateRandomColor = () => {
 };
 
 // Handling functions
-
-// Cause 'Random Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
-const handleRandomColorButton = (): void => {
-  const RANDOM_COLOR_BUTTON = document.querySelector("button[style*='background-color: rgb(255, 255, 0)']");
-
-  RANDOM_COLOR_BUTTON?.addEventListener("click", generateRandomColor);
-};
 
 // Cause next '.box' to have a different background-color from the previous '.box' when a cursor hovers on.
 const applyRandomColorOnHover = () => {

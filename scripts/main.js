@@ -266,6 +266,11 @@ class RandomColor {
             background_color: "#FFFF00",
             textContent: "Random Color",
         };
+        // Cause 'Random Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
+        this.handleRandomColorButton = () => {
+            const RANDOM_COLOR_BUTTON = document.querySelector("button[style*='background-color: rgb(255, 255, 0)']");
+            RANDOM_COLOR_BUTTON === null || RANDOM_COLOR_BUTTON === void 0 ? void 0 : RANDOM_COLOR_BUTTON.addEventListener("click", generateRandomColor);
+        };
     }
     createNode() {
         const RANDOM_BUTTON = document.createElement("button");
@@ -361,11 +366,6 @@ const generateRandomColor = () => {
     container.currentColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
 };
 // Handling functions
-// Cause 'Random Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
-const handleRandomColorButton = () => {
-    const RANDOM_COLOR_BUTTON = document.querySelector("button[style*='background-color: rgb(255, 255, 0)']");
-    RANDOM_COLOR_BUTTON === null || RANDOM_COLOR_BUTTON === void 0 ? void 0 : RANDOM_COLOR_BUTTON.addEventListener("click", generateRandomColor);
-};
 // Cause next '.box' to have a different background-color from the previous '.box' when a cursor hovers on.
 const applyRandomColorOnHover = () => {
     const boxes = document.querySelectorAll(".box");
