@@ -385,7 +385,6 @@ const handleMultiColorsButton = () => {
 const handleDOMContentLoaded = () => {
     const showContainer = () => container.showContainer();
     document.addEventListener("DOMContentLoaded", deployButtons);
-    document.addEventListener("DOMContentLoaded", handleRandomColorButton);
     document.addEventListener("DOMContentLoaded", showContainer);
     document.addEventListener("DOMContentLoaded", handleMultiColorsButton);
 };
