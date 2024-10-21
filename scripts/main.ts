@@ -341,9 +341,9 @@ class RandomColor implements Button {
 
   // Cause 'Random Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
   public handleRandomColorButton = (): void => {
-    const RANDOM_COLOR_BUTTON = document.querySelector("button[style*='background-color: rgb(255, 255, 0)']");
+    const RANDOM_COLOR_BUTTON = document.querySelector("button[style*='background-color: rgb(255, 255, 0)']") as HTMLElement;
   
-    RANDOM_COLOR_BUTTON?.addEventListener("click", generateRandomColor);
+    RANDOM_COLOR_BUTTON.addEventListener("click", generateRandomColor);
   };
 }
 
