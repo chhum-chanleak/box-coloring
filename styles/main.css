@@ -7,6 +7,13 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -48,4 +55,3 @@ button {
 button:active {
   background-color: #b3ddf3;
 }
-
