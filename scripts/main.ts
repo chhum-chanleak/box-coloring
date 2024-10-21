@@ -363,6 +363,17 @@ class MultiColors implements Button {
 
     return MULTI_COLORS_BUTTON;
   }
+
+  // Cause next '.box' to have a different background-color from the previous '.box' when a cursor hovers on.
+  public applyRandomColorOnHover = () => {
+  const boxes = document.querySelectorAll(".box");
+
+  for (let i = 0 ; i < boxes.length; i += 1) {
+    const box = boxes[i] as HTMLElement;
+    
+    box.addEventListener("mouseenter", generateRandomColor);
+  }
+};
 }
 
 class Refresh implements Button {
@@ -464,17 +475,6 @@ const generateRandomColor = () => {
 };
 
 // Handling functions
-
-// Cause next '.box' to have a different background-color from the previous '.box' when a cursor hovers on.
-const applyRandomColorOnHover = () => {
-  const boxes = document.querySelectorAll(".box");
-
-  for (let i = 0 ; i < boxes.length; i += 1) {
-    const box = boxes[i] as HTMLElement;
-    
-    box.addEventListener("mouseenter", generateRandomColor);
-  }
-};
 
 // Cause 'Multi-Color' button to set '_currentColor' of class 'Container' to have a value of a random color and also set 'container.colorIsMultiple' to 'true'.
 const handleMultiColorsButton = (): void => {

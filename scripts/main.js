@@ -287,6 +287,14 @@ class MultiColors {
             background_color: "#00FF00",
             textContent: "Multi-Colors",
         };
+        // Cause next '.box' to have a different background-color from the previous '.box' when a cursor hovers on.
+        this.applyRandomColorOnHover = () => {
+            const boxes = document.querySelectorAll(".box");
+            for (let i = 0; i < boxes.length; i += 1) {
+                const box = boxes[i];
+                box.addEventListener("mouseenter", generateRandomColor);
+            }
+        };
     }
     createNode() {
         const MULTI_COLORS_BUTTON = document.createElement("button");
@@ -376,14 +384,6 @@ const generateRandomColor = () => {
     container.currentColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
 };
 // Handling functions
-// Cause next '.box' to have a different background-color from the previous '.box' when a cursor hovers on.
-const applyRandomColorOnHover = () => {
-    const boxes = document.querySelectorAll(".box");
-    for (let i = 0; i < boxes.length; i += 1) {
-        const box = boxes[i];
-        box.addEventListener("mouseenter", generateRandomColor);
-    }
-};
 // Cause 'Multi-Color' button to set '_currentColor' of class 'Container' to have a value of a random color and also set 'container.colorIsMultiple' to 'true'.
 const handleMultiColorsButton = () => {
     const MULTI_COLORS_BUTTON = document.querySelector("button[style*='background-color: rgb(0, 255, 0)']");
