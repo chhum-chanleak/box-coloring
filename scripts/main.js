@@ -390,6 +390,14 @@ const getRandomNumberBetweenTwoNumbers = (min, max) => {
 const generateRandomColor = () => {
     container.currentColor = `rgb(${getRandomNumberBetweenTwoNumbers(1, 225).r}, ${getRandomNumberBetweenTwoNumbers(1, 225).g}, ${getRandomNumberBetweenTwoNumbers(1, 225).b})`;
 };
+const showContainerAccordingToCurrentModel = () => {
+    if (container.getBoxesModel() === "30x30") {
+        container.showContainer(30);
+    }
+    else {
+        container.showContainer(17);
+    }
+};
 // Handling functions
 // Call these functions when DOM content loads.
 const handleDOMContentLoaded = () => {
