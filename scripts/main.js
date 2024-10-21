@@ -389,7 +389,6 @@ const handleDOMContentLoaded = () => {
     const showContainer = () => container.showContainer();
     document.addEventListener("DOMContentLoaded", deployButtons);
     document.addEventListener("DOMContentLoaded", showContainer);
-    document.addEventListener("DOMContentLoaded", handleMultiColorsButton);
 };
 handleDOMContentLoaded();
 const container = Container.getInstance();

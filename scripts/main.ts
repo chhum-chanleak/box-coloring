@@ -482,7 +482,6 @@ const handleDOMContentLoaded = () => {
 
   document.addEventListener("DOMContentLoaded", deployButtons);
   document.addEventListener("DOMContentLoaded", showContainer);
-  document.addEventListener("DOMContentLoaded", handleMultiColorsButton);
 };
 handleDOMContentLoaded();
 
