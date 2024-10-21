@@ -69,3 +69,14 @@ button {
 button:active {
   background-color: #b3ddf3;
 }
+
+/* For iphone 14 Pro Max. */
+@media (max-width: 430px) {
+  main {
+    width: 100%;
+
+    & .buttons > button {
+      font-size: 12px;
+    }
+  }
+}
