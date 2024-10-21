@@ -268,8 +268,7 @@ class RandomColor {
         };
         // Cause 'Random Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
         this.handleRandomColorButton = () => {
-            const RANDOM_COLOR_BUTTON = document.querySelector("button[style*='background-color: rgb(255, 255, 0)']");
-            RANDOM_COLOR_BUTTON.addEventListener("click", generateRandomColor);
+            generateRandomColor();
             showContainerAccordingToCurrentModel();
         };
     }
