@@ -367,11 +367,7 @@ class MultiColors implements Button {
   // Cause next '.box' to have a different background-color from the previous '.box' when a cursor hovers on.
   public applyRandomColorOnHover = () => {
 
-    if (container.getBoxesModel() === "30x30") {
-      container.showContainer(30);
-    } else {
-      container.showContainer(17);
-    }
+    showContainerAccordingToCurrentModel();
 
     const boxes = document.querySelectorAll(".box");  
 
