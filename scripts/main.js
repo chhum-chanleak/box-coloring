@@ -308,10 +308,10 @@ class Refresh {
         const { background_color, textContent } = this._style;
         REFRESH_BUTTON.style.backgroundColor = `${background_color}`;
         REFRESH_BUTTON.textContent = `${textContent}`;
+        REFRESH_BUTTON.addEventListener("click", this.handleRefreshButton);
         return REFRESH_BUTTON;
     }
     handleRefreshButton() {
-        const REFRESH_BUTTON = document.querySelector("button[style*='background-color: rgb(0, 0, 255)']");
         if (container.getBoxesModel() === "30x30") {
             container.showContainer(30);
         }

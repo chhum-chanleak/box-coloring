@@ -377,6 +377,7 @@ class Refresh implements Button {
 
     REFRESH_BUTTON.style.backgroundColor = `${background_color}`;
     REFRESH_BUTTON.textContent = `${textContent}`;
+    REFRESH_BUTTON.addEventListener("click", this.handleRefreshButton);
 
     return REFRESH_BUTTON;
   }
