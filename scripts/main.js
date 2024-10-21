@@ -318,7 +318,7 @@ class Refresh {
         const { background_color, textContent } = this._style;
         REFRESH_BUTTON.style.backgroundColor = `${background_color}`;
         REFRESH_BUTTON.textContent = `${textContent}`;
-        REFRESH_BUTTON.addEventListener("click", this.handleRefreshButton);
+        REFRESH_BUTTON.addEventListener("click", showContainerAccordingToCurrentModel);
         return REFRESH_BUTTON;
     }
 }
