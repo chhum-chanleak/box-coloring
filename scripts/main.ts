@@ -380,6 +380,16 @@ class Refresh implements Button {
 
     return REFRESH_BUTTON;
   }
+
+  public handleRefreshButton(): void {
+    const REFRESH_BUTTON = document.querySelector("button[style*='background-color: rgb(0, 0, 255)']") as HTMLElement;
+
+    if (container.getBoxesModel() === "30x30") {
+      container.showContainer(30);
+    } else {
+      container.showContainer(17);
+    }
+  }
 }
 
 // Button factory

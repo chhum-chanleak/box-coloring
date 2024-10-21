@@ -310,6 +310,15 @@ class Refresh {
         REFRESH_BUTTON.textContent = `${textContent}`;
         return REFRESH_BUTTON;
     }
+    handleRefreshButton() {
+        const REFRESH_BUTTON = document.querySelector("button[style*='background-color: rgb(0, 0, 255)']");
+        if (container.getBoxesModel() === "30x30") {
+            container.showContainer(30);
+        }
+        else {
+            container.showContainer(17);
+        }
+    }
 }
 // Button factory
 class ButtonFactory {

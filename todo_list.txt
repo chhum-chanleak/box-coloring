@@ -110,3 +110,14 @@ FUNCTION deployButtons():
   ENDFOR
 ENDFUNCTION
 <-
+
+->
+FUNCTION handleRefreshButton():
+  INIT REFRESH_BUTTON = 'button.refresh'
+
+  IF getBoxesModel = '30x30':
+    container.showContainer(30)
+  OTHERWISE:
+    container.showContainer(19)
+ENDFUNCTION
+<-
