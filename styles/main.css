@@ -24,6 +24,17 @@ main {
     display: flex;
     flex-wrap: wrap;
   }
+
+  & .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  & .buttons > button:hover {
+  color: rgba(2, 46, 75, 0.533);
+  }
 }
 
 button {
@@ -37,3 +48,4 @@ button {
 button:active {
   background-color: #b3ddf3;
 }
+
