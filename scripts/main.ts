@@ -335,7 +335,7 @@ class RandomColor implements Button {
 
     RANDOM_BUTTON.style.backgroundColor = `${background_color}`;
     RANDOM_BUTTON.textContent = `${textContent}`;
-    RANDOM_BUTTON.addEventListener("mouseenter", this.handleRandomColorButton);
+    RANDOM_BUTTON.addEventListener("click", this.handleRandomColorButton);
 
     return RANDOM_BUTTON;
   }

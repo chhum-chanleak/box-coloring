@@ -270,6 +270,7 @@ class RandomColor {
         this.handleRandomColorButton = () => {
             const RANDOM_COLOR_BUTTON = document.querySelector("button[style*='background-color: rgb(255, 255, 0)']");
             RANDOM_COLOR_BUTTON.addEventListener("click", generateRandomColor);
+            showContainerAccordingToCurrentModel();
         };
     }
     createNode() {
@@ -277,7 +278,7 @@ class RandomColor {
         const { background_color, textContent } = this._style;
         RANDOM_BUTTON.style.backgroundColor = `${background_color}`;
         RANDOM_BUTTON.textContent = `${textContent}`;
-        RANDOM_BUTTON.addEventListener("mouseenter", this.handleRandomColorButton);
+        RANDOM_BUTTON.addEventListener("click", this.handleRandomColorButton);
         return RANDOM_BUTTON;
     }
 }
