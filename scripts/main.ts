@@ -360,20 +360,28 @@ class MultiColors implements Button {
 
     MULTI_COLORS_BUTTON.style.backgroundColor = `${background_color}`;
     MULTI_COLORS_BUTTON.textContent = `${textContent}`;
+    MULTI_COLORS_BUTTON.addEventListener("click", this.applyRandomColorOnHover);
 
     return MULTI_COLORS_BUTTON;
   }
 
   // Cause next '.box' to have a different background-color from the previous '.box' when a cursor hovers on.
   public applyRandomColorOnHover = () => {
-  const boxes = document.querySelectorAll(".box");
 
-  for (let i = 0 ; i < boxes.length; i += 1) {
-    const box = boxes[i] as HTMLElement;
-    
-    box.addEventListener("mouseenter", generateRandomColor);
-  }
-};
+    if (container.getBoxesModel() === "30x30") {
+      container.showContainer(30);
+    } else {
+      container.showContainer(17);
+    }
+
+    const boxes = document.querySelectorAll(".box");  
+
+    for (let i = 0 ; i < boxes.length; i += 1) {
+      const box = boxes[i] as HTMLElement;
+      
+      box.addEventListener("mouseenter", generateRandomColor);
+    }
+    };
 }
 
 class Refresh implements Button {

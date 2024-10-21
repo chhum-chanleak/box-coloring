@@ -289,6 +289,12 @@ class MultiColors {
         };
         // Cause next '.box' to have a different background-color from the previous '.box' when a cursor hovers on.
         this.applyRandomColorOnHover = () => {
+            if (container.getBoxesModel() === "30x30") {
+                container.showContainer(30);
+            }
+            else {
+                container.showContainer(17);
+            }
             const boxes = document.querySelectorAll(".box");
             for (let i = 0; i < boxes.length; i += 1) {
                 const box = boxes[i];
@@ -301,6 +307,7 @@ class MultiColors {
         const { background_color, textContent } = this._style;
         MULTI_COLORS_BUTTON.style.backgroundColor = `${background_color}`;
         MULTI_COLORS_BUTTON.textContent = `${textContent}`;
+        MULTI_COLORS_BUTTON.addEventListener("click", this.applyRandomColorOnHover);
         return MULTI_COLORS_BUTTON;
     }
 }
