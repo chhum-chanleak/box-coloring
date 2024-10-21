@@ -321,14 +321,6 @@ class Refresh {
         REFRESH_BUTTON.addEventListener("click", this.handleRefreshButton);
         return REFRESH_BUTTON;
     }
-    handleRefreshButton() {
-        if (container.getBoxesModel() === "30x30") {
-            container.showContainer(30);
-        }
-        else {
-            container.showContainer(17);
-        }
-    }
 }
 // Button factory
 class ButtonFactory {
