@@ -225,16 +225,14 @@ class Container {
 class ThirtyByThirty {
     constructor() {
         this._style = {
-            background_color: "#FF0000",
             textContent: "30 x 30",
         };
     }
     createNode() {
         const THIRTY_BY_THIRTY_BUTTON = document.createElement("button");
-        const { background_color, textContent } = this._style;
+        const { textContent } = this._style;
         // "click" event handling function for this 'button'.
         const handler = () => container.showContainer(30);
-        THIRTY_BY_THIRTY_BUTTON.style.backgroundColor = `${background_color}`;
         THIRTY_BY_THIRTY_BUTTON.textContent = `${textContent}`;
         // Apply event to this 'button', which replace 'div.container' with a new 'div.container'.
         THIRTY_BY_THIRTY_BUTTON.addEventListener("click", handler);
@@ -244,16 +242,14 @@ class ThirtyByThirty {
 class SeventeenBySeventeen {
     constructor() {
         this._style = {
-            background_color: "#FF7F00",
             textContent: "17 x 17",
         };
     }
     createNode() {
         const SEVENTEEN_BY_SEVENTEEN_BUTTON = document.createElement("button");
-        const { background_color, textContent } = this._style;
+        const { textContent } = this._style;
         // "click" event handling function for this 'button'.
         const handler = () => container.showContainer(17);
-        SEVENTEEN_BY_SEVENTEEN_BUTTON.style.backgroundColor = `${background_color}`;
         SEVENTEEN_BY_SEVENTEEN_BUTTON.textContent = `${textContent}`;
         // Apply event to this 'button', which replace 'div.container' with a new 'div.container'.
         SEVENTEEN_BY_SEVENTEEN_BUTTON.addEventListener("click", handler);
@@ -263,7 +259,6 @@ class SeventeenBySeventeen {
 class RandomColor {
     constructor() {
         this._style = {
-            background_color: "#FFFF00",
             textContent: "Random Color",
         };
         // Cause 'Random Color' button to set '_currentColor' of class 'Container' to have a value of a random color.
@@ -274,8 +269,7 @@ class RandomColor {
     }
     createNode() {
         const RANDOM_BUTTON = document.createElement("button");
-        const { background_color, textContent } = this._style;
-        RANDOM_BUTTON.style.backgroundColor = `${background_color}`;
+        const { textContent } = this._style;
         RANDOM_BUTTON.textContent = `${textContent}`;
         RANDOM_BUTTON.addEventListener("click", this.handleRandomColorButton);
         return RANDOM_BUTTON;
@@ -284,7 +278,6 @@ class RandomColor {
 class MultiColors {
     constructor() {
         this._style = {
-            background_color: "#00FF00",
             textContent: "Multi-Colors",
         };
         // Cause next '.box' to have a different background-color from the previous '.box' when a cursor hovers on.
@@ -299,8 +292,7 @@ class MultiColors {
     }
     createNode() {
         const MULTI_COLORS_BUTTON = document.createElement("button");
-        const { background_color, textContent } = this._style;
-        MULTI_COLORS_BUTTON.style.backgroundColor = `${background_color}`;
+        const { textContent } = this._style;
         MULTI_COLORS_BUTTON.textContent = `${textContent}`;
         MULTI_COLORS_BUTTON.addEventListener("click", this.applyRandomColorOnHover);
         return MULTI_COLORS_BUTTON;
@@ -309,14 +301,12 @@ class MultiColors {
 class Refresh {
     constructor() {
         this._style = {
-            background_color: "#0000FF",
             textContent: "Refresh",
         };
     }
     createNode() {
         const REFRESH_BUTTON = document.createElement("button");
-        const { background_color, textContent } = this._style;
-        REFRESH_BUTTON.style.backgroundColor = `${background_color}`;
+        const { textContent } = this._style;
         REFRESH_BUTTON.textContent = `${textContent}`;
         REFRESH_BUTTON.addEventListener("click", showContainerAccordingToCurrentModel);
         return REFRESH_BUTTON;

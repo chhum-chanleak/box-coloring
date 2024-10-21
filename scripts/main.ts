@@ -271,7 +271,6 @@ class Container {
 // Button Interface
 interface Button {
   _style: {
-    background_color: string,
     textContent: string,
   };
 
@@ -281,18 +280,16 @@ interface Button {
 // Concrete Button
 class ThirtyByThirty implements Button {
   _style = {
-    background_color: "#FF0000",
     textContent: "30 x 30",
   };
 
  public createNode(): HTMLElement {
     const THIRTY_BY_THIRTY_BUTTON = document.createElement("button") as HTMLElement;
-    const { background_color, textContent } = this._style;
+    const { textContent } = this._style;
 
     // "click" event handling function for this 'button'.
     const handler = () => container.showContainer(30);
 
-    THIRTY_BY_THIRTY_BUTTON.style.backgroundColor = `${background_color}`;
     THIRTY_BY_THIRTY_BUTTON.textContent = `${textContent}`;
     // Apply event to this 'button', which replace 'div.container' with a new 'div.container'.
     THIRTY_BY_THIRTY_BUTTON.addEventListener("click", handler);
@@ -303,18 +300,16 @@ class ThirtyByThirty implements Button {
 
 class SeventeenBySeventeen implements Button {
   _style = {
-    background_color: "#FF7F00",
     textContent: "17 x 17",
   };
 
  public createNode(): HTMLElement {
     const SEVENTEEN_BY_SEVENTEEN_BUTTON = document.createElement("button") as HTMLElement;
-    const { background_color, textContent } = this._style;
+    const { textContent } = this._style;
 
     // "click" event handling function for this 'button'.
     const handler = () => container.showContainer(17);
 
-    SEVENTEEN_BY_SEVENTEEN_BUTTON.style.backgroundColor = `${background_color}`;
     SEVENTEEN_BY_SEVENTEEN_BUTTON.textContent = `${textContent}`;
     // Apply event to this 'button', which replace 'div.container' with a new 'div.container'.
     SEVENTEEN_BY_SEVENTEEN_BUTTON.addEventListener("click", handler);
@@ -325,15 +320,13 @@ class SeventeenBySeventeen implements Button {
 
 class RandomColor implements Button {
   _style = {
-    background_color: "#FFFF00",
     textContent: "Random Color",
   };
 
   public createNode(): HTMLElement {
     const RANDOM_BUTTON = document.createElement("button") as HTMLElement;
-    const { background_color, textContent } = this._style;
+    const { textContent } = this._style;
 
-    RANDOM_BUTTON.style.backgroundColor = `${background_color}`;
     RANDOM_BUTTON.textContent = `${textContent}`;
     RANDOM_BUTTON.addEventListener("click", this.handleRandomColorButton);
 
@@ -349,15 +342,13 @@ class RandomColor implements Button {
 
 class MultiColors implements Button {
   _style = {
-    background_color: "#00FF00",
     textContent: "Multi-Colors",
   };
 
   createNode(): HTMLElement {
     const MULTI_COLORS_BUTTON = document.createElement("button") as HTMLElement;
-    const { background_color, textContent } = this._style;
+    const { textContent } = this._style;
 
-    MULTI_COLORS_BUTTON.style.backgroundColor = `${background_color}`;
     MULTI_COLORS_BUTTON.textContent = `${textContent}`;
     MULTI_COLORS_BUTTON.addEventListener("click", this.applyRandomColorOnHover);
 
@@ -381,15 +372,13 @@ class MultiColors implements Button {
 
 class Refresh implements Button {
   _style = {
-    background_color: "#0000FF",
     textContent: "Refresh",
   };
 
   createNode(): HTMLElement {
     const REFRESH_BUTTON = document.createElement("button") as HTMLElement;
-    const { background_color, textContent } = this._style;
+    const { textContent } = this._style;
 
-    REFRESH_BUTTON.style.backgroundColor = `${background_color}`;
     REFRESH_BUTTON.textContent = `${textContent}`;
     REFRESH_BUTTON.addEventListener("click", showContainerAccordingToCurrentModel);
 
