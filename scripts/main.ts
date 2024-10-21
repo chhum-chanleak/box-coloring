@@ -382,8 +382,6 @@ class Refresh implements Button {
   }
 
   public handleRefreshButton(): void {
-    const REFRESH_BUTTON = document.querySelector("button[style*='background-color: rgb(0, 0, 255)']") as HTMLElement;
-
     if (container.getBoxesModel() === "30x30") {
       container.showContainer(30);
     } else {
@@ -479,7 +477,6 @@ const applyRandomColorOnHover = () => {
 
 // Cause 'Multi-Color' button to set '_currentColor' of class 'Container' to have a value of a random color and also set 'container.colorIsMultiple' to 'true'.
 const handleMultiColorsButton = (): void => {
-
   const MULTI_COLORS_BUTTON = document.querySelector("button[style*='background-color: rgb(0, 255, 0)']") as HTMLElement;
   // Handling function for 'Multi-Color' button.
 
