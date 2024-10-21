@@ -345,6 +345,7 @@ class RandomColor implements Button {
     const RANDOM_COLOR_BUTTON = document.querySelector("button[style*='background-color: rgb(255, 255, 0)']") as HTMLElement;
   
     RANDOM_COLOR_BUTTON.addEventListener("click", generateRandomColor);
+    showContainerAccordingToCurrentModel();
   };
 }
 
